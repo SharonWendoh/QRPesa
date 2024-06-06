@@ -3,10 +3,10 @@ package com.example.qrpesa.pages
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+//import androidx.compose.material.Button
+//import androidx.compose.material.MaterialTheme
+//import androidx.compose.material.Surface
+//import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -17,12 +17,20 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.border
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
+import androidx.compose.material3.Button
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun QRPesaLogin() {
     // State variable for storing the PIN
@@ -42,24 +50,24 @@ fun QRPesaLogin() {
             Spacer(modifier = Modifier.height(100.dp))
             Text(
                 text = "SH",
-                style = MaterialTheme.typography.h5,
+                style = MaterialTheme.typography.bodyLarge,
                 color = Color.White
             )
             Text(
                 text = "Sharon Wendoh",
-                style = MaterialTheme.typography.body1,
+                style = MaterialTheme.typography.bodyMedium,
                 color = Color.White
             )
             Text(
                 text = "0702020101",
-                style = MaterialTheme.typography.body1,
+                style = MaterialTheme.typography.bodyMedium,
                 color = Color.White
             )
             Spacer(modifier = Modifier.height(80.dp))
 
             Text(
                 text = "Enter Mpesa Pin",
-                style = MaterialTheme.typography.body1,
+                style = MaterialTheme.typography.bodyMedium,
                 color = Color.White
             )
 
@@ -77,11 +85,11 @@ fun QRPesaLogin() {
                         modifier = Modifier
                             .size(50.dp)
                             .border(1.dp, Color.White, shape = CircleShape),
-                        textStyle = MaterialTheme.typography.h4.copy(color = Color.White),
+                        textStyle = MaterialTheme.typography.bodySmall.copy(color = Color.White),
                         singleLine = true,
                         shape = CircleShape,
                         colors = TextFieldDefaults.textFieldColors(
-                            backgroundColor = Color.Black,
+                            containerColor = Color.Black,
                             focusedIndicatorColor = Color.Transparent,
                             unfocusedIndicatorColor = Color.Transparent
                         )
