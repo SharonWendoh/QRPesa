@@ -13,9 +13,12 @@ import androidx.compose.ui.unit.dp
 import com.example.qrpesa.ui.theme.QRPesaTheme
 
 @Composable
-fun SharedButton(){
+fun SharedButton(
+    text: String,
+    onclick : () -> Unit
+){
     Button(
-        onClick = { },
+        onClick = onclick,
         colors = ButtonDefaults.buttonColors(
             containerColor = MaterialTheme.colorScheme.primary
         ),
@@ -23,7 +26,7 @@ fun SharedButton(){
             .height(65.dp)
             .width(320.dp)
     ) {
-        Text(text = "Filled")
+        Text(text = text)
 
     }
 }
@@ -32,6 +35,6 @@ fun SharedButton(){
 @Preview
 fun PreviewSharedButton(){
     QRPesaTheme {
-        SharedButton()
+        SharedButton("Cancel", {})
     }
 }

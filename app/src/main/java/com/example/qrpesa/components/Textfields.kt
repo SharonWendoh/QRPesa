@@ -40,17 +40,21 @@ fun PinFields(){
             TextField(
                 value = if (i < pin.length) pin[i].toString() else "",
                 onValueChange = {},
-                readOnly = false,
+                readOnly = true,
                 modifier = Modifier
                     .size(50.dp)
                     .border(
                         BorderStroke(1.dp, MaterialTheme.colorScheme.secondary),
                         shape = CircleShape
                     ),
+                textStyle = MaterialTheme.typography.bodySmall.copy(color = Color.White),
+                singleLine = true,
                 shape = CircleShape,
                 colors = TextFieldDefaults.textFieldColors(
                     //textColor = Color.White,
-                    containerColor = Color.Transparent
+                    containerColor = Color.Black,
+                    focusedIndicatorColor = Color.Transparent,
+                    unfocusedIndicatorColor = Color.Transparent
                 )
             )
             Spacer(modifier = Modifier.width(8.dp))

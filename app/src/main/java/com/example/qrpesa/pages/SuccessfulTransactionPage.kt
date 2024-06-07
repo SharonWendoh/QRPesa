@@ -29,7 +29,10 @@ import com.example.qrpesa.components.SuccessCard
 import com.example.qrpesa.ui.theme.QRPesaTheme
 
 @Composable
-fun SuccessfulTransactionPage(){
+fun SuccessfulTransactionPage(
+    tillNumber: String?,
+    amount: String?,
+){
     Column (
         modifier = Modifier
             .fillMaxSize()
@@ -54,13 +57,13 @@ fun SuccessfulTransactionPage(){
             LargeText(text = "TREATS BY WENDOH")
         }
         Row {
-            LargeText(text = "TILL NUMBER 8811788")
+            LargeText(text = "TILL NUMBER $tillNumber")
         }
         Spacer(modifier = Modifier.height(8.dp))
         Row (
             verticalAlignment = Alignment.Bottom
         ){
-            MediumText(text = "KSH, 200.00")
+            MediumText(text = "KSH, $amount")
             Spacer(modifier = Modifier.width(10.dp))
             SmallText(text = "FEE: KSH 0.00")
         }
@@ -79,7 +82,7 @@ fun SuccessfulTransactionPage(){
         }
         Spacer(modifier = Modifier.height(130.dp))
         Row {
-            SharedButton()
+            SharedButton("Done", { })
         }
     }
 }
@@ -88,6 +91,6 @@ fun SuccessfulTransactionPage(){
 @Preview
 fun PreviewSuccessfulTransactionPage(){
     QRPesaTheme {
-        SuccessfulTransactionPage()
+        SuccessfulTransactionPage("8811788", "200")
     }
 }

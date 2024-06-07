@@ -28,17 +28,25 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.example.qrpesa.components.SharedButton
+import com.example.qrpesa.navigation.Screen
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun QRPesaLogin() {
+fun QRPesaLogin(
+    navController: NavController,
+) {
     // State variable for storing the PIN
+    var transactionMessage by remember { mutableStateOf("") }
     var pin by remember { mutableStateOf("") }
+
 
     Surface(
         modifier = Modifier.fillMaxSize(),
-        color = Color.Black
+        //color = Color.Black
     ) {
         Column(
             modifier = Modifier
@@ -135,6 +143,15 @@ fun QRPesaLogin() {
                         }
                     }
                 }
+                Spacer(modifier = Modifier.height(30.dp))
+                SharedButton(
+                    "Continue",
+                    onclick = {if (pin == "1234") { // Dummy check for PIN, replace with actual logic transactionMessage = "Payment of $amount to till $tillNumber successful!"
+                        navController.navigate(route = Screen.Screen.Pin.route)
+                    } else {
+                        transactionMessage = "Incorrect PIN. Please try again."
+                    }}
+                )
             }
         }
     }
@@ -143,5 +160,5 @@ fun QRPesaLogin() {
 @Preview
 @Composable
 fun PreviewQRPesaLogin() {
-    QRPesaLogin()
+    QRPesaLogin(navController = rememberNavController())
 }
