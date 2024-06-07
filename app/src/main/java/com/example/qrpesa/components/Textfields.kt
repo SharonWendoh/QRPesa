@@ -49,7 +49,7 @@ fun PinFields(){
                     ),
                 shape = CircleShape,
                 colors = TextFieldDefaults.textFieldColors(
-                    textColor = MaterialTheme.colorScheme.secondary,
+                    //textColor = Color.White,
                     containerColor = Color.Transparent
                 )
             )

@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.dp
 import com.example.qrpesa.pages.PinPage
 import com.example.qrpesa.pages.SuccessfulTransactionPage
 import com.example.qrpesa.ui.theme.QRPesaTheme
+import com.example.qrpesa.pages.QRPesaLogin
 
 class MainActivity : ComponentActivity() {
 
@@ -115,22 +116,45 @@ fun QRPesaApp(tillNumber: String?, amount: String?) {
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text("Proceed to Payment")
+                // A surface container using the 'background' color from the theme
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    QRPesaLogin()
+                }
             }
         }
     }
 }
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+//@Composable
+//fun Greeting(name: String, modifier: Modifier = Modifier) {
+//    Text(
+//        text = "Hello $name!",
+//        modifier = modifier
+//    )
+//}
+//
+//@Preview(showBackground = true)
+//@Composable
+//fun GreetingPreview() {
+//    QRPesaTheme {
+//        Greeting("Android")
+//    }
+//}
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    QRPesaTheme {
-        Greeting("Android")
-    }
-}
+//@Composable
+//fun Greeting(name: String, modifier: Modifier = Modifier) {
+//    Text(
+//        text = "Hello $name!",
+//        modifier = modifier
+//    )
+//}
+//
+//@Preview(showBackground = true)
+//@Composable
+//fun GreetingPreview() {
+//    QRPesaTheme {
+//        Greeting("Android")
+//    }
+//}
