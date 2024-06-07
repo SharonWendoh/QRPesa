@@ -25,6 +25,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.qrpesa.pages.PinPage
 import com.example.qrpesa.pages.SuccessfulTransactionPage
 import com.example.qrpesa.ui.theme.QRPesaTheme
 
@@ -37,6 +38,7 @@ class MainActivity : ComponentActivity() {
         handleIntent(intent)
         setContent {
             QRPesaTheme {
+                PinPage()
                 //SuccessfulTransactionPage()
                 //QRPesaApp(tillNumber, amount)
             }
