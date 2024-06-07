@@ -59,7 +59,7 @@ fun QRPesaLogin(
             Text(
                 text = "SH",
                 style = MaterialTheme.typography.bodyLarge,
-                color = Color.White
+                color = MaterialTheme.colorScheme.secondary
             )
             Text(
                 text = "Sharon Wendoh",
