@@ -143,7 +143,7 @@ fun QRPesaLogin(
                 Spacer(modifier = Modifier.height(30.dp))
                 Row {
                     SharedButton(
-                        text = "Pay",
+                        text = "Login",
                         onclick = {
                             if (pin == "1234") { // Dummy check for PIN, replace with actual logic
                                 navController.navigate(route = Screen.Screen.Pin.route)
