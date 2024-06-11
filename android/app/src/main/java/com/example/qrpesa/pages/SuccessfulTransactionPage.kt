@@ -48,7 +48,7 @@ fun SuccessfulTransactionPage(
         }
         Spacer(modifier = Modifier.height(40.dp))
         Row {
-            InitialsCard()
+            InitialsCard("TW")
         }
         Spacer(modifier = Modifier.height(16.dp))
         Row (

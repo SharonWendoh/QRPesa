@@ -30,6 +30,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.qrpesa.components.InitialsCard
 import com.example.qrpesa.components.SharedButton
 import com.example.qrpesa.navigation.Screen
 
@@ -56,27 +57,23 @@ fun QRPesaLogin(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Spacer(modifier = Modifier.height(100.dp))
-            Text(
-                text = "SH",
-                style = MaterialTheme.typography.bodyLarge,
-                color = MaterialTheme.colorScheme.secondary
-            )
+            InitialsCard("SW")
             Text(
                 text = "Sharon Wendoh",
                 style = MaterialTheme.typography.bodyMedium,
-                color = Color.White
+                color = MaterialTheme.colorScheme.secondary
             )
             Text(
                 text = "0702020101",
                 style = MaterialTheme.typography.bodyMedium,
-                color = Color.White
+                color = MaterialTheme.colorScheme.secondary
             )
             Spacer(modifier = Modifier.height(80.dp))
 
             Text(
                 text = "Enter Mpesa Pin",
                 style = MaterialTheme.typography.bodyMedium,
-                color = Color.White
+                color = MaterialTheme.colorScheme.secondary
             )
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -92,12 +89,12 @@ fun QRPesaLogin(
                         readOnly = true,
                         modifier = Modifier
                             .size(50.dp)
-                            .border(1.dp, Color.White, shape = CircleShape),
-                        textStyle = MaterialTheme.typography.bodySmall.copy(color = Color.White),
+                            .border(1.dp, MaterialTheme.colorScheme.secondary, shape = CircleShape),
+                        textStyle = MaterialTheme.typography.bodySmall.copy(color = MaterialTheme.colorScheme.secondary),
                         singleLine = true,
                         shape = CircleShape,
                         colors = TextFieldDefaults.textFieldColors(
-                            containerColor = Color.Black,
+                            containerColor = Color.Transparent,
                             focusedIndicatorColor = Color.Transparent,
                             unfocusedIndicatorColor = Color.Transparent
                         )
@@ -144,14 +141,18 @@ fun QRPesaLogin(
                     }
                 }
                 Spacer(modifier = Modifier.height(30.dp))
-                SharedButton(
-                    "Continue",
-                    onclick = {if (pin == "1234") { // Dummy check for PIN, replace with actual logic transactionMessage = "Payment of $amount to till $tillNumber successful!"
-                        navController.navigate(route = Screen.Screen.Pin.route)
-                    } else {
-                        transactionMessage = "Incorrect PIN. Please try again."
-                    }}
-                )
+                Row {
+                    SharedButton(
+                        text = "Pay",
+                        onclick = {
+                            if (pin == "1234") { // Dummy check for PIN, replace with actual logic
+                                navController.navigate(route = Screen.Screen.Pin.route)
+                            } else {
+                                //transactionMessage = "Incorrect PIN. Please try again."
+                            }
+                        },
+                    )
+                }
             }
         }
     }

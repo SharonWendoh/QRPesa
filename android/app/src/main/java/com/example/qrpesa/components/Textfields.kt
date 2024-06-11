@@ -27,10 +27,7 @@ import com.example.qrpesa.ui.theme.QRPesaTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PinFields(){
-    var pin by remember {
-        mutableStateOf("")
-    }
+fun PinFields(pin: String){
     Row (
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
@@ -47,12 +44,12 @@ fun PinFields(){
                         BorderStroke(1.dp, MaterialTheme.colorScheme.secondary),
                         shape = CircleShape
                     ),
-                textStyle = MaterialTheme.typography.bodySmall.copy(color = Color.White),
+                textStyle = MaterialTheme.typography.bodySmall.copy(color = MaterialTheme.colorScheme.secondary),
                 singleLine = true,
                 shape = CircleShape,
                 colors = TextFieldDefaults.textFieldColors(
                     //textColor = Color.White,
-                    containerColor = Color.Black,
+                    containerColor = Color.Transparent,
                     focusedIndicatorColor = Color.Transparent,
                     unfocusedIndicatorColor = Color.Transparent
                 )
@@ -66,6 +63,6 @@ fun PinFields(){
 @Preview
 fun PreviewPinFields(){
     QRPesaTheme {
-        PinFields()
+        PinFields("1234")
     }
 }

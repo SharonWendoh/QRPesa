@@ -57,7 +57,7 @@ fun PinPage(
         }
         Spacer(modifier = Modifier.height(40.dp))
         Row {
-            InitialsCard()
+            InitialsCard("TW")
         }
         Spacer(modifier = Modifier.height(16.dp))
         Row(
@@ -83,7 +83,7 @@ fun PinPage(
         }
         Spacer(modifier = Modifier.height(20.dp))
         Row {
-            PinFields()
+            PinFields(pin)
         }
         Spacer(modifier = Modifier.height(30.dp))
         Column {
@@ -121,7 +121,7 @@ fun PinPage(
                     }
                 }
             }
-            Spacer(modifier = Modifier.height(30.dp))
+            Spacer(modifier = Modifier.height(25.dp))
             Row {
                 SharedButton(
                     text = "Pay",

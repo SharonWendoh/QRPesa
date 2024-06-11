@@ -25,19 +25,23 @@ import com.example.qrpesa.R
 import com.example.qrpesa.ui.theme.QRPesaTheme
 
 @Composable
-fun InitialsCard(){
+fun InitialsCard(
+    text: String
+){
     Card(
         modifier = Modifier
             .border(BorderStroke(1.dp, MaterialTheme.colorScheme.secondary), shape = CircleShape)
             .size(50.dp),
-shape = CircleShape
+        shape = CircleShape,
+        colors = CardDefaults.cardColors(containerColor = Color.Transparent)
     ) {
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier.fillMaxSize()){
             Text(
                 text = "SW",
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
+                color = MaterialTheme.colorScheme.secondary
             )
         }
     }
@@ -71,7 +75,7 @@ fun SuccessCard(){
 @Preview
 fun PreviewInitialsCard(){
     QRPesaTheme {
-        InitialsCard()
+        InitialsCard("SW")
     }
 }
 @Composable
